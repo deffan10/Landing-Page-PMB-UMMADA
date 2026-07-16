@@ -119,6 +119,7 @@ const profil = ref(profilData)
 <style scoped>
 .profil-view {
   position: relative;
+  overflow: hidden;
 }
 
 /* Page Header */

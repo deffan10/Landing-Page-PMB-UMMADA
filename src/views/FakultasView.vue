@@ -70,6 +70,11 @@ const fakultasData = ref(contentFakultas)
 </script>
 
 <style scoped>
+.fakultas-view {
+  position: relative;
+  overflow: hidden;
+}
+
 /* Page Header */
 .page-header {
   background: radial-gradient(circle at 50% 100%, #cce5e2 0%, var(--bg-dark) 85%);

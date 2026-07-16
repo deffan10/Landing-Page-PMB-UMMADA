@@ -4,7 +4,7 @@
     <header class="navbar-header" :class="{ 'scrolled': isScrolled }">
       <div class="container navbar-container">
         <router-link to="/" class="navbar-logo">
-          <img src="/logo-ummada.png" alt="Logo UMMADA Cirebon" class="logo-img" />
+          <img :src="logoUrl" alt="Logo UMMADA Cirebon" class="logo-img" />
           <div class="logo-text">
             <span class="logo-title">UMMADA</span>
             <span class="logo-subtitle">PMB Portal</span>
@@ -62,7 +62,7 @@
       <div class="container footer-grid">
         <div class="footer-col brand-col">
           <div class="footer-logo">
-            <img src="/logo-ummada.png" alt="Logo UMMADA" class="logo-img" />
+            <img :src="logoUrl" alt="Logo UMMADA" class="logo-img" />
             <h3>UMMADA Cirebon</h3>
           </div>
           <p class="brand-desc">
@@ -100,7 +100,7 @@
           <div class="contact-phones">
             <strong>PMB Admin Support:</strong>
             <ul>
-              <li v-for="(phone, index) in kontak.phoneLines?.slice(0, 2)" :key="index">
+              <li v-for="(phone, index) in kontak.phoneLines" :key="index">
                 <a :href="phone.waUrl" target="_blank" rel="noopener">{{ phone.label }}: {{ phone.number }}</a>
               </li>
             </ul>
@@ -119,6 +119,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import kontakData from './content/kontak.json'
+import logoUrl from './assets/logo-ummada.png'
 
 const kontak = ref(kontakData)
 const isScrolled = ref(false)

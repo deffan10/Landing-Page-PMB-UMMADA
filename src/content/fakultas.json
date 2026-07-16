@@ -11,15 +11,9 @@
         "Kampus 2: Jl. Walet No.21, Kertawinangun, Kec. Kedawung, Kabupaten Cirebon"
       ],
       "prodi": [
-        { "level": "S1", "name": "Kesehatan Masyarakat", "duration": "4 Tahun" },
         { "level": "S1", "name": "Kebidanan", "duration": "4 Tahun" },
-        { "level": "S1", "name": "Ilmu Keperawatan", "duration": "4 Tahun" },
         { "level": "Profesi", "name": "Pendidikan Bidan", "duration": "1 Tahun" },
-        { "level": "Profesi", "name": "Ners", "duration": "1 Tahun" },
         { "level": "D3", "name": "Keperawatan", "duration": "3 Tahun" },
-        { "level": "D3", "name": "Kebidanan", "duration": "3 Tahun" },
-        { "level": "D3", "name": "Fisioterapi", "duration": "3 Tahun" },
-        { "level": "D3", "name": "Radiodiagnostik dan Radioterapi", "duration": "3 Tahun" },
         { "level": "S1", "name": "Administrasi Rumah Sakit", "duration": "4 Tahun" }
       ]
     },

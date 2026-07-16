@@ -123,7 +123,7 @@ const profil = ref(profilData)
 
 /* Page Header */
 .page-header {
-  background: radial-gradient(circle at 50% 100%, #0d2624 0%, var(--bg-dark) 80%);
+  background: radial-gradient(circle at 50% 100%, #e0f2f1 0%, var(--bg-dark) 80%);
 }
 
 .page-header h1 {

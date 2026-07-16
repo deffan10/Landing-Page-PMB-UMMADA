@@ -78,7 +78,7 @@
         
         <div class="biaya-qr-display text-center">
           <div class="qr-wrapper">
-            <img :src="home.biayaPerkuliahan?.qrCodeImage" alt="QR Code Biaya PMB UMMADA" class="qr-img" />
+            <img :src="qrCodeUrl" alt="QR Code Biaya PMB UMMADA" class="qr-img" />
             <div class="qr-overlay">
               <span class="scan-text">Scan QR / Klik untuk Rincian Biaya</span>
             </div>
@@ -117,6 +117,7 @@
 import { ref } from 'vue'
 import homeData from '../content/home.json'
 import kontakData from '../content/kontak.json'
+import qrCodeUrl from '../assets/qr-biaya.jpg'
 
 const home = ref(homeData)
 const kontak = ref(kontakData)
@@ -131,7 +132,7 @@ const kontak = ref(kontakData)
 /* Hero Styles */
 .hero-section {
   padding: 6rem 0 4rem;
-  background: radial-gradient(circle at 50% 30%, #0d2624 0%, var(--bg-dark) 80%);
+  background: radial-gradient(circle at 50% 30%, #e0f2f1 0%, var(--bg-dark) 80%);
 }
 
 .hero-container {

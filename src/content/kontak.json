@@ -1,0 +1,47 @@
+{
+  "email": "info@ummada.ac.id",
+  "socials": {
+    "facebook": "https://facebook.com/ummadacirebon",
+    "instagram": "https://instagram.com/ummadacirebon",
+    "youtube": "https://youtube.com/@ummadacirebon"
+  },
+  "campuses": [
+    {
+      "name": "Kampus 1",
+      "address": "Jl. Walet No.21, Kertawinangun, Kec. Kedawung, Kabupaten Cirebon, Jawa Barat 45153",
+      "mapsUrl": "https://www.google.com/maps/place/Nursing+Academy+Muhammadiyah+Cirebon/@-6.712618,108.5381875,17z/data=!3m1!4b1!4m6!3m5!1s0x2e6ee216bc75a129:0xf9675938f112108c!8m2!3d-6.712618!4d108.5407624!16s%2Fg%2F1pzrw3fw1?entry=ttu&g_ep=EgoyMDI1MTAyOS4yIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+      "name": "Kampus 2",
+      "address": "Jl. Cideng Indah No 3 Kertawinangun Kedawung Kabupaten Cirebon",
+      "mapsUrl": "https://maps.app.goo.gl/pfewG4haJy7GNTFr9"
+    },
+    {
+      "name": "Kampus 3",
+      "address": "Jl. Kalitanjung No.14 - 18 A, Harjamukti, Kec. Harjamukti, Kota Cirebon, Jawa Barat 45143",
+      "mapsUrl": "https://share.google/38c8dn66kS1CtMa0z"
+    }
+  ],
+  "phoneLines": [
+    {
+      "label": "ADMIN PMB FAKULTAS FARMASI",
+      "number": "085163147479",
+      "waUrl": "https://wa.me/6285163147479"
+    },
+    {
+      "label": "HUMAS FAKULTAS FARMASI",
+      "number": "081122221131",
+      "waUrl": "https://wa.me/6281122221131"
+    },
+    {
+      "label": "ADMIN PMB FAKULTAS ILMU KESEHATAN",
+      "number": "089662448212",
+      "waUrl": "https://wa.me/6289662448212"
+    },
+    {
+      "label": "ADMIN PMB FAKULTAS EKONOMI SOSIAL DAN HUMANIORA",
+      "number": "08520000125",
+      "waUrl": "https://wa.me/628520000125"
+    }
+  ]
+}

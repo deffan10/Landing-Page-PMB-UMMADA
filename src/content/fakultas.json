@@ -1,0 +1,51 @@
+{
+  "title": "Fakultas & Program Studi UMMADA Cirebon",
+  "subtitle": "Temukan program studi unggulan yang sesuai dengan minat dan bakat Anda untuk membangun karir cemerlang.",
+  "fakultas": [
+    {
+      "name": "Fakultas Ilmu Kesehatan (FIKES)",
+      "abbreviation": "FIKES",
+      "description": "Fakultas Ilmu Kesehatan berkomitmen mencetak tenaga kesehatan profesional yang unggul, kompeten, dan berintegritas tinggi berdasarkan nilai-nilai keislaman.",
+      "locations": [
+        "Kampus 1: Jl. Kalitanjung No.14-18A, Harjamukti, Kota Cirebon",
+        "Kampus 2: Jl. Walet No.21, Kertawinangun, Kec. Kedawung, Kabupaten Cirebon"
+      ],
+      "prodi": [
+        { "level": "S1", "name": "Kesehatan Masyarakat", "duration": "4 Tahun" },
+        { "level": "S1", "name": "Kebidanan", "duration": "4 Tahun" },
+        { "level": "S1", "name": "Ilmu Keperawatan", "duration": "4 Tahun" },
+        { "level": "Profesi", "name": "Pendidikan Bidan", "duration": "1 Tahun" },
+        { "level": "Profesi", "name": "Ners", "duration": "1 Tahun" },
+        { "level": "D3", "name": "Keperawatan", "duration": "3 Tahun" },
+        { "level": "D3", "name": "Kebidanan", "duration": "3 Tahun" },
+        { "level": "D3", "name": "Fisioterapi", "duration": "3 Tahun" },
+        { "level": "D3", "name": "Radiodiagnostik dan Radioterapi", "duration": "3 Tahun" },
+        { "level": "S1", "name": "Administrasi Rumah Sakit", "duration": "4 Tahun" }
+      ]
+    },
+    {
+      "name": "Fakultas Farmasi",
+      "abbreviation": "Farmasi",
+      "description": "Fakultas Farmasi UMMADA menyelenggarakan pendidikan kefarmasian teoritis dan klinis yang berkualitas guna mendukung ketahanan kesehatan masyarakat.",
+      "locations": [
+        "Kampus 3: Jl. Cideng Indah No. 3, Kertawinangun, Kec. Kedawung, Kabupaten Cirebon"
+      ],
+      "prodi": [
+        { "level": "S1", "name": "Farmasi", "duration": "4 Tahun" },
+        { "level": "D3", "name": "Farmasi", "duration": "3 Tahun" }
+      ]
+    },
+    {
+      "name": "Fakultas Ekonomi, Sosial, dan Humaniora (FESHUM)",
+      "abbreviation": "FESHUM",
+      "description": "Fakultas Ekonomi, Sosial, dan Humaniora membekali mahasiswa dengan keahlian bisnis modern, pengelolaan keuangan, dan pemikiran kritis sosial.",
+      "locations": [
+        "Kampus Utama: Jl. Cideng Indah No. 3, Kertawinangun, Kec. Kedawung, Kabupaten Cirebon"
+      ],
+      "prodi": [
+        { "level": "S1", "name": "Akuntansi", "duration": "4 Tahun" },
+        { "level": "S1", "name": "Manajemen", "duration": "4 Tahun" }
+      ]
+    }
+  ]
+}

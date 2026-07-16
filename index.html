@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Penerimaan Mahasiswa Baru (PMB) Universitas Muhammadiyah Ahmad Dahlan Cirebon (UMMADA) - Kampus Unggul & Islami Berorientasi Kesehatan. Daftar online sekarang!">
+  <meta name="keywords" content="PMB UMMADA Cirebon, Universitas Muhammadiyah Ahmad Dahlan Cirebon, pendaftaran UMMADA, STIKes Cirebon, STF Muhammadiyah Cirebon, kuliah di Cirebon">
+  <meta name="author" content="UMMADA Cirebon">
+  <title>PMB UMMADA Cirebon - Penerimaan Mahasiswa Baru</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/logo-ummada.png">
+  
+  <!-- Premium Fonts (Outfit & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Inline minimal loading screen styling */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0b1312;
+      color: #ffffff;
+    }
+    #app-loading-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: radial-gradient(circle at center, #0f2725 0%, #060b0b 100%);
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(9, 163, 154, 0.1);
+      border-left-color: #09a39a;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="app-root-container">
+    <div id="app-loading-state">
+      <div class="spinner"></div>
+      <p style="color: #09a39a; font-family: 'Outfit', sans-serif; font-weight: 500; letter-spacing: 0.5px;">Memuat PMB UMMADA...</p>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

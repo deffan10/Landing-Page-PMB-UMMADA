@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "title": "Masa Depan Cerah Dimulai dari Sini",
+    "subtitle": "Universitas Muhammadiyah Ahmad Dahlan Cirebon",
+    "description": "Menjadi Universitas Unggul, Islami, dan Berorientasi Kesehatan. Bergabunglah bersama kami untuk memimpin inovasi dalam dunia kesehatan dan teknologi.",
+    "ctaRegisterText": "Daftar Sekarang",
+    "ctaRegisterUrl": "/register",
+    "ctaLoginText": "Masuk Akun",
+    "ctaLoginUrl": "/login",
+    "infoBiayaText": "Informasi Biaya Kuliah",
+    "infoBiayaUrl": "https://bit.ly/BIAYAPMB2627"
+  },
+  "jalurMasuk": [
+    {
+      "code": "01",
+      "name": "Reguler",
+      "description": "Jalur pendaftaran reguler untuk lulusan SMA/SMK/MA sederajat melalui seleksi nilai rapor atau tes.",
+      "url": "https://pmb.ummada.ac.id/jalur-masuk/68e32b2c27d92c6a8711ad0e"
+    },
+    {
+      "code": "02",
+      "name": "Penelusuran Minat Bakat & Prestasi (PMBP)",
+      "description": "Seleksi khusus bagi siswa berprestasi di bidang akademik, olahraga, seni, keagamaan, atau minat bakat lainnya.",
+      "url": "https://pmb.ummada.ac.id/jalur-masuk/68e32b2027d92c6a8711ad0d"
+    },
+    {
+      "code": "03",
+      "name": "RPL & Pendidikan Profesi Bidan",
+      "description": "Jalur Rekognisi Pembelajaran Lampau (RPL) untuk lulusan D3 Kebidanan melanjutkan ke S1 + Profesi Bidan.",
+      "url": "https://pmb.ummada.ac.id/jalur-masuk/690022f8d095fb00859da5c1"
+    },
+    {
+      "code": "04",
+      "name": "RPL Farmasi",
+      "description": "Jalur transfer atau penyetaraan kompetensi pembelajaran lampau untuk program studi D3/S1 Farmasi.",
+      "url": "https://pmb.ummada.ac.id/jalur-masuk/6a0e864def9de99f800c6916"
+    },
+    {
+      "code": "05",
+      "name": "Kelas Karyawan D3 Farmasi",
+      "description": "Program perkuliahan khusus bagi karyawan dengan waktu belajar fleksibel tanpa mengganggu jadwal kerja.",
+      "url": "https://pmb.ummada.ac.id/jalur-masuk/68e32b4c27d92c6a8711ad0f"
+    }
+  ],
+  "biayaPerkuliahan": {
+    "title": "Biaya Perkuliahan Seluruh Program Studi",
+    "description": "Untuk informasi rincian biaya kuliah lengkap, silakan scan QR Code yang tertera atau klik tombol unduh brosur biaya di bawah ini.",
+    "qrCodeImage": "/qr-biaya.jpg",
+    "linkBrosur": "https://bit.ly/BIAYAPMB2627",
+    "linkBrosurText": "Unduh Brosur Biaya Kuliah"
+  }
+}

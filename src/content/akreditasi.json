@@ -1,0 +1,36 @@
+{
+  "title": "Akreditasi Universitas & Program Studi",
+  "subtitle": "Kredibilitas penjaminan mutu akademik UMMADA Cirebon yang diakui secara resmi oleh BAN-PT dan LAM-PTKes.",
+  "university": {
+    "status": "Baik Sekali",
+    "skNumber": "2780/SK/BAN-PT/Ak-PNB/PT/X/2025",
+    "year": "2025",
+    "description": "Berdasarkan SK BAN-PT Nomor: 2780/SK/BAN-PT/Ak-PNB/PT/X/2025, Universitas Muhammadiyah Ahmad Dahlan Cirebon telah resmi menetapkan peringkat akreditasi perguruan tinggi dengan status 'Baik Sekali'."
+  },
+  "documents": [
+    {
+      "name": "Surat Keputusan (SK) Penggabungan UMMADA Cirebon",
+      "description": "Keputusan Menteri Pendidikan Tinggi, Sains, dan Teknologi RI Nomor 517/B/O/2025 tentang Perubahan atas Izin Penggabungan Sekolah Tinggi menjadi Universitas Muhammadiyah Ahmad Dahlan Cirebon.",
+      "fileUrl": "/document/SK-UMMADA.pdf",
+      "size": "PDF Dokumen"
+    },
+    {
+      "name": "Sertifikat Akreditasi Perguruan Tinggi (APT) UMMADA Cirebon (2025 - 2030)",
+      "description": "Sertifikat Resmi BAN-PT yang menetapkan Peringkat Akreditasi Perguruan Tinggi Universitas Muhammadiyah Ahmad Dahlan Cirebon dengan peringkat Baik Sekali.",
+      "fileUrl": "/document/APT_Sertifikat_UMMADA.pdf",
+      "size": "PDF Dokumen"
+    },
+    {
+      "name": "SK Akreditasi Perguruan Tinggi Sebelumnya (2024 - 2025)",
+      "description": "Keterangan Akreditasi Perguruan Tinggi sebelum penggabungan resmi seluruh entitas sekolah tinggi.",
+      "fileUrl": "/document/APT_Sebelumnya.pdf",
+      "size": "PDF Dokumen"
+    },
+    {
+      "name": "SK Akreditasi Program Studi D3 UMMADA Cirebon (2023 - 2028)",
+      "description": "Surat Keputusan LAM-PTKes mengenai akreditasi program studi Diploma Tiga (D3) setelah penggabungan.",
+      "fileUrl": "/document/D3_UMMADA_Akreditasi.pdf",
+      "size": "PDF Dokumen"
+    }
+  ]
+}

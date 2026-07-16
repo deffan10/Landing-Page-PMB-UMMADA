@@ -1,0 +1,44 @@
+{
+  "about": {
+    "title": "Tentang UMMADA Cirebon",
+    "historyTitle": "Sejarah Singkat Penggabungan",
+    "description": "Universitas Muhammadiyah Ahmad Dahlan (UMMADA) Cirebon merupakan perguruan tinggi Muhammadiyah yang hadir sebagai penggabungan dari tiga sekolah tinggi di Cirebon, yaitu: STIKes Muhammadiyah Cirebon, STF Muhammadiyah Cirebon, dan STIKes Ahmad Dahlan Cirebon.",
+    "mergerDetail": "Penggabungan ini secara resmi ditetapkan melalui Keputusan Menteri Pendidikan, Kebudayaan, Riset, dan Teknologi Nomor 405/E/O/2024 pada tanggal 3 Juli 2024, serta diperbarui melalui Keputusan Menteri Pendidikan Tinggi, Sains, dan Teknologi Republik Indonesia Nomor 517/B/O/2025 tentang Perubahan atas Izin Penggabungan Sekolah Tinggi tersebut menjadi Universitas Muhammadiyah Ahmad Dahlan Cirebon di Kabupaten Cirebon Provinsi Jawa Barat yang Diselenggarakan oleh Persyarikatan Muhammadiyah, tanggal 8 Juli 2025."
+  },
+  "visiMisi": {
+    "visi": {
+      "title": "VISI",
+      "content": "Universitas Unggul dan Islami Berorientasi Kesehatan dalam Pengembangan Ilmu Pengetahuan dan teknologi Tahun 2044"
+    },
+    "misi": {
+      "title": "MISI",
+      "items": [
+        "Menyelenggarakan pendidikan yang bermutu berorientasi kesehatan dengan mengintegrasikan ilmu pengetahuan, teknologi, dan nilai-nilai Islam Kemuhammadiyahan.",
+        "Menyelenggarakan penelitian yang inovatif, relevan dengan perkembangan ilmu pengetahuan dan teknologi.",
+        "Menyelenggarakan pengabdian kepada masyarakat dan berorientasi kesehatan.",
+        "Menyelenggarakan tata kelola universitas bermutu dan kerjasama yang sinergis, berkelanjutan secara Nasional dan Internasional."
+      ]
+    }
+  },
+  "tujuan": {
+    "title": "TUJUAN",
+    "items": [
+      "Menghasilkan lulusan yang bermutu dengan mengintegrasikan ilmu pengetahuan, teknologi, dan nilai-nilai Islam Kemuhammadiyahan, yang berorientasi kesehatan.",
+      "Menghasilkan penelitian inovatif yang relevan dengan kemajuan ilmu pengetahuan dan teknologi serta memberikan dampak signifikan pada pembangunan masyarakat.",
+      "Menghasilkan pengabdian kepada masyarakat yang unggul dengan membangun pusat kajian halal sebagai referensi dalam pengembangan produk dan layanan berbasis halal.",
+      "Menghasilkan tata kelola yang bermutu serta membangun jejaring kerja sama sinergis dan berkelanjutan di tingkat Nasional dan Internasional."
+    ]
+  },
+  "sasaran": {
+    "title": "SASARAN STRATEGIS",
+    "items": [
+      "Terwujudnya sistem akademik yang mengintegrasikan nilai-nilai Islam Kemuhammadiyahan dalam kurikulum dan berorientasi kesehatan.",
+      "Peningkatan kualitas lulusan yang kompetitif dan berkarakter Islami.",
+      "Terwujudnya penelitian inovatif yang relevan dengan kemajuan ilmu pengetahuan dan teknologi.",
+      "Terwujudnya hasil penelitian yang terintegrasi dengan pembelajaran dan pengabdian kepada masyarakat.",
+      "Terwujudnya pusat kajian halal dan memperkuat pengabdian kepada masyarakat berbasis nilai-nilai Islam.",
+      "Terwujudnya tata kelola universitas berbasis perkembangan teknologi.",
+      "Terwujudnya kerja sama Nasional dan Internasional untuk mendukung visi universitas."
+    ]
+  }
+}

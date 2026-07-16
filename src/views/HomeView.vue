@@ -42,28 +42,44 @@
     <!-- Jalur Masuk Section -->
     <section class="jalur-section section-padding">
       <div class="container">
-        <div class="section-header-flex">
-          <div class="section-header-left">
-            <span class="section-badge">Jalur Pendaftaran</span>
-            <h2>Pilihan Jalur Masuk UMMADA</h2>
-            <p class="section-subtitle">Tersedia berbagai pilihan jalur pendaftaran reguler maupun prestasi untuk calon mahasiswa.</p>
-          </div>
-          <div class="slider-controls">
-            <button class="slider-btn prev-btn" @click="scrollLeft(jalurSlider)" aria-label="Previous Slide">←</button>
-            <button class="slider-btn next-btn" @click="scrollRight(jalurSlider)" aria-label="Next Slide">→</button>
-          </div>
+        <div class="section-header text-center">
+          <span class="section-badge">Jalur Pendaftaran</span>
+          <h2>Pilihan Jalur Masuk UMMADA</h2>
+          <p class="section-subtitle">Tersedia berbagai pilihan jalur pendaftaran reguler maupun prestasi untuk calon mahasiswa.</p>
         </div>
 
-        <div class="slider-container">
-          <div class="slider-track" ref="jalurSlider">
-            <div v-for="jalur in home.jalurMasuk" :key="jalur.code" class="jalur-card glass-card">
-              <div class="jalur-badge-code">{{ jalur.code }}</div>
-              <h3>{{ jalur.name }}</h3>
-              <p>{{ jalur.description }}</p>
-              <div class="jalur-action-footer">
-                <a :href="home.hero?.ctaRegisterUrl" class="btn btn-secondary btn-block">Pilih Jalur</a>
+        <div class="tabs-container grid-2">
+          <!-- Left Column: Tabs List -->
+          <div class="tabs-list-wrapper">
+            <button 
+              v-for="(jalur, index) in home.jalurMasuk" 
+              :key="jalur.code"
+              class="tab-item-btn"
+              :class="{ 'active': activeJalurIndex === index }"
+              @click="selectJalur(index)"
+            >
+              <span class="tab-code">{{ jalur.code }}</span>
+              <span class="tab-name">{{ jalur.name }}</span>
+            </button>
+          </div>
+
+          <!-- Right Column: Active Card -->
+          <div class="tab-content-wrapper">
+            <transition name="fade-slide" mode="out-in">
+              <div 
+                v-if="home.jalurMasuk?.[activeJalurIndex]" 
+                :key="activeJalurIndex"
+                class="tab-detail-card glass-card"
+              >
+                <div class="card-glow-spot"></div>
+                <span class="badge-accent">Jalur {{ home.jalurMasuk[activeJalurIndex].code }}</span>
+                <h3>{{ home.jalurMasuk[activeJalurIndex].name }}</h3>
+                <p class="tab-desc">{{ home.jalurMasuk[activeJalurIndex].description }}</p>
+                <div class="tab-action-footer">
+                  <a :href="home.hero?.ctaRegisterUrl" class="btn btn-primary">Pilih Jalur Ini</a>
+                </div>
               </div>
-            </div>
+            </transition>
           </div>
         </div>
       </div>
@@ -72,35 +88,79 @@
     <!-- Program Studi Section -->
     <section class="prodi-section section-padding">
       <div class="container">
-        <div class="section-header-flex">
-          <div class="section-header-left">
-            <span class="section-badge">Pilihan Program Studi</span>
-            <h2>Program Studi Unggulan UMMADA</h2>
-            <p class="section-subtitle">Pilih program studi masa depanmu untuk berkarir secara profesional di dunia kesehatan, sains, dan bisnis.</p>
-          </div>
-          <div class="slider-controls">
-            <button class="slider-btn prev-btn" @click="scrollLeft(prodiSlider)" aria-label="Previous Slide">←</button>
-            <button class="slider-btn next-btn" @click="scrollRight(prodiSlider)" aria-label="Next Slide">→</button>
-          </div>
+        <div class="section-header text-center">
+          <span class="section-badge">Pilihan Program Studi</span>
+          <h2>Program Studi Unggulan UMMADA</h2>
+          <p class="section-subtitle">Pilih program studi masa depanmu untuk berkarir secara profesional di dunia kesehatan, sains, dan bisnis.</p>
         </div>
 
-        <div class="slider-container">
-          <div class="slider-track" ref="prodiSlider">
-            <div v-for="(prodi, index) in programStudi" :key="index" class="prodi-card glass-card">
-              <div class="prodi-card-header">
-                <span class="prodi-badge">Terakreditasi</span>
-                <h3>{{ prodi.name }}</h3>
+        <div class="tabs-container grid-2">
+          <!-- Left Column: Tabs List -->
+          <div class="tabs-list-wrapper">
+            <button 
+              v-for="(prodi, index) in programStudi" 
+              :key="index"
+              class="tab-item-btn"
+              :class="{ 'active': activeProdiIndex === index }"
+              @click="selectProdi(index)"
+            >
+              <span class="tab-icon">⚡</span>
+              <span class="tab-name">{{ prodi.name }}</span>
+            </button>
+          </div>
+
+          <!-- Right Column: Active Card -->
+          <div class="tab-content-wrapper">
+            <transition name="fade-slide" mode="out-in">
+              <div 
+                v-if="programStudi[activeProdiIndex]" 
+                :key="activeProdiIndex"
+                class="tab-detail-card glass-card prodi-detail-card"
+              >
+                <div class="card-glow-spot"></div>
+                <div class="prodi-card-header">
+                  <span class="prodi-badge">Terakreditasi</span>
+                  <h3>{{ programStudi[activeProdiIndex].name }}</h3>
+                </div>
+                <p class="tab-desc">{{ programStudi[activeProdiIndex].description }}</p>
+                
+                <div class="prodi-prospek">
+                  <strong>Prospek Karir Lulusan:</strong>
+                  <ul>
+                    <li v-for="(job, idx) in programStudi[activeProdiIndex].prospek" :key="idx">
+                      {{ job }}
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-action-footer">
+                  <router-link to="/fakultas" class="btn btn-primary">Informasi Fakultas</router-link>
+                </div>
               </div>
-              <p class="prodi-desc">{{ prodi.description }}</p>
-              <div class="prodi-prospek">
-                <strong>Prospek Kerja:</strong>
-                <ul>
-                  <li v-for="(job, idx) in prodi.prospek" :key="idx">{{ job }}</li>
-                </ul>
-              </div>
-              <div class="prodi-action-footer">
-                <router-link to="/fakultas" class="btn btn-secondary btn-block">Detail Jurusan</router-link>
-              </div>
+            </transition>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alur Pendaftaran Section -->
+    <section class="alur-section section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">Prosedur</span>
+          <h2>Alur Pendaftaran Mahasiswa Baru</h2>
+          <p class="section-subtitle">Ikuti langkah-langkah berikut untuk melakukan pendaftaran secara lengkap dan resmi di UMMADA.</p>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-grid">
+            <div 
+              v-for="(step, idx) in alurPendaftaran" 
+              :key="idx" 
+              class="timeline-node glass-card"
+            >
+              <div class="node-num">{{ idx + 1 }}</div>
+              <h3>{{ step.title }}</h3>
+              <p>{{ step.desc }}</p>
             </div>
           </div>
         </div>
@@ -162,7 +222,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import homeData from '../content/home.json'
 import kontakData from '../content/kontak.json'
 import qrCodeUrl from '../assets/qr-biaya.jpg'
@@ -170,20 +230,58 @@ import qrCodeUrl from '../assets/qr-biaya.jpg'
 const home = ref(homeData)
 const kontak = ref(kontakData)
 
-const jalurSlider = ref(null)
-const prodiSlider = ref(null)
+const activeJalurIndex = ref(0)
+const activeProdiIndex = ref(0)
 
-const scrollLeft = (sliderRef) => {
-  if (sliderRef) {
-    sliderRef.scrollBy({ left: -380, behavior: 'smooth' })
-  }
+let jalurInterval = null
+let prodiInterval = null
+
+const startAutoplay = () => {
+  jalurInterval = setInterval(() => {
+    if (home.value.jalurMasuk && home.value.jalurMasuk.length > 0) {
+      activeJalurIndex.value = (activeJalurIndex.value + 1) % home.value.jalurMasuk.length
+    }
+  }, 2000)
+
+  prodiInterval = setInterval(() => {
+    if (programStudi.value.length > 0) {
+      activeProdiIndex.value = (activeProdiIndex.value + 1) % programStudi.value.length
+    }
+  }, 2000)
 }
 
-const scrollRight = (sliderRef) => {
-  if (sliderRef) {
-    sliderRef.scrollBy({ left: 380, behavior: 'smooth' })
-  }
+const stopAutoplay = () => {
+  if (jalurInterval) clearInterval(jalurInterval)
+  if (prodiInterval) clearInterval(prodiInterval)
 }
+
+const selectJalur = (index) => {
+  activeJalurIndex.value = index
+  clearInterval(jalurInterval)
+  jalurInterval = setInterval(() => {
+    if (home.value.jalurMasuk && home.value.jalurMasuk.length > 0) {
+      activeJalurIndex.value = (activeJalurIndex.value + 1) % home.value.jalurMasuk.length
+    }
+  }, 4000)
+}
+
+const selectProdi = (index) => {
+  activeProdiIndex.value = index
+  clearInterval(prodiInterval)
+  prodiInterval = setInterval(() => {
+    if (programStudi.value.length > 0) {
+      activeProdiIndex.value = (activeProdiIndex.value + 1) % programStudi.value.length
+    }
+  }, 4000)
+}
+
+onMounted(() => {
+  startAutoplay()
+})
+
+onUnmounted(() => {
+  stopAutoplay()
+})
 
 const programStudi = ref([
   {
@@ -266,6 +364,17 @@ const programStudi = ref([
       "Konsultan Bisnis & Manajemen"
     ]
   }
+])
+
+const alurPendaftaran = ref([
+  { title: "Bikin Akun", desc: "Buat akun pendaftaran PMB dengan mengisi email aktif dan password." },
+  { title: "Isi Biodata", desc: "Lengkapi data diri dasar secara benar untuk inisialisasi akun." },
+  { title: "Pilih Jalur", desc: "Tentukan jalur masuk (Reguler/PPMB/RPL) yang sesuai persyaratan." },
+  { title: "Bayar Formulir", desc: "Lakukan pembayaran biaya formulir pendaftaran melalui bank mitra." },
+  { title: "Biodata Tambahan", desc: "Lengkapi data riwayat sekolah, data orang tua, dan berkas pendukung." },
+  { title: "Upload Berkas", desc: "Unggah dokumen persyaratan (scan rapor, ijazah, KTP/KK, foto)." },
+  { title: "Tahap Seleksi", desc: "Mengikuti evaluasi seleksi nilai rapor atau ujian berbasis CBT." },
+  { title: "Daftar Ulang", desc: "Pengumuman kelulusan, registrasi administrasi, dan verifikasi akhir." }
 ])
 </script>
 
@@ -535,115 +644,171 @@ const programStudi = ref([
   font-size: 0.85rem;
 }
 
-/* Slider Header Controls & Track Styling */
-.section-header-flex {
+.btn-wa {
+  flex-shrink: 0;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+/* Vertical Tabs Layout */
+.tabs-container {
+  align-items: stretch;
+  gap: 2.5rem;
+}
+
+.tabs-list-wrapper {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 2.5rem;
-}
-
-@media (max-width: 768px) {
-  .section-header-flex {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
-}
-
-.section-header-left {
-  max-width: 700px;
-}
-
-.slider-controls {
-  display: flex;
+  flex-direction: column;
   gap: 0.75rem;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
 }
 
-.slider-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--border-color);
-  background: var(--glass-bg);
-  color: var(--text-primary);
-  font-size: 1.2rem;
+/* Scrollbar styles for tabs list */
+.tabs-list-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.tabs-list-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tabs-list-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(9, 163, 154, 0.2);
+  border-radius: 4px;
+}
+.tabs-list-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(9, 163, 154, 0.4);
+}
+
+.tab-item-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--text-primary);
+  text-align: left;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 0.98rem;
+  box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
 }
 
-.slider-btn:hover {
-  background: var(--primary);
+.tab-item-btn:hover {
+  background: var(--bg-surface-hover);
+  border-color: rgba(9, 163, 154, 0.3);
+  transform: translateX(4px);
+}
+
+.tab-item-btn.active {
+  background-color: var(--primary);
   color: #ffffff;
   border-color: var(--primary);
-  box-shadow: 0 4px 10px rgba(9, 163, 154, 0.2);
+  box-shadow: 0 4px 15px rgba(9, 163, 154, 0.3);
 }
 
-/* Slider Track styling */
-.slider-container {
-  width: 100%;
-  overflow: hidden;
+.tab-code {
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.tab-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.tab-name {
+  flex: 1;
+}
+
+/* Detail Active Card */
+.tab-content-wrapper {
   position: relative;
-  margin: 0 -1rem;
-  padding: 0 1rem;
 }
 
-.slider-track {
-  display: flex;
-  gap: 1.5rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  padding: 1rem 0.25rem 2rem;
-  -webkit-overflow-scrolling: touch;
-}
-
-.slider-track::-webkit-scrollbar {
-  display: none;
-}
-
-.slider-track {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Slide Cards */
-.jalur-card {
-  flex: 0 0 360px;
-  scroll-snap-align: start;
+.tab-detail-card {
+  padding: 3rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: auto;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
-@media (max-width: 480px) {
-  .jalur-card {
-    flex: 0 0 290px;
+.tab-detail-card h3 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+.tab-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.badge-accent {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.tab-action-footer {
+  margin-top: auto;
+}
+
+/* Page Responsive layout for vertical tabs on small screens */
+@media (max-width: 900px) {
+  .tabs-container.grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .tabs-list-wrapper {
+    flex-direction: row;
+    max-height: none;
+    overflow-x: auto;
+    padding-bottom: 0.75rem;
+  }
+  .tab-item-btn {
+    white-space: nowrap;
+    padding: 0.75rem 1.25rem;
+  }
+  .tab-item-btn:hover {
+    transform: none;
   }
 }
 
-.prodi-card {
-  flex: 0 0 360px;
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 440px;
+/* Prodi Active Details */
+.prodi-detail-card {
+  justify-content: flex-start;
 }
 
-@media (max-width: 480px) {
-  .prodi-card {
-    flex: 0 0 290px;
-    min-height: 480px;
-  }
-}
-
-.prodi-card-header {
-  margin-bottom: 1rem;
+.prodi-detail-card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .prodi-badge {
@@ -652,33 +817,39 @@ const programStudi = ref([
   text-transform: uppercase;
   color: #ffffff;
   background-color: var(--primary);
-  padding: 0.2rem 0.6rem;
+  padding: 0.25rem 0.65rem;
   border-radius: 4px;
   display: inline-block;
   margin-bottom: 0.5rem;
 }
 
-.prodi-desc {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
-}
-
 .prodi-prospek {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  background: rgba(9, 163, 154, 0.04);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px dashed rgba(9, 163, 154, 0.2);
 }
 
 .prodi-prospek strong {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .prodi-prospek ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
   list-style: none;
   padding-left: 0;
+}
+
+@media (max-width: 576px) {
+  .prodi-prospek ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 .prodi-prospek li {
@@ -686,7 +857,6 @@ const programStudi = ref([
   color: var(--text-secondary);
   position: relative;
   padding-left: 1.25rem;
-  margin-bottom: 0.4rem;
 }
 
 .prodi-prospek li::before {
@@ -697,7 +867,81 @@ const programStudi = ref([
   color: var(--primary);
 }
 
-.prodi-action-footer {
-  margin-top: auto;
+/* Timeline / Alur Pendaftaran */
+.timeline-wrapper {
+  margin-top: 3.5rem;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.timeline-node {
+  padding: 2rem;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.timeline-node:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.node-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, #00d2c4 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 10px rgba(9, 163, 154, 0.3);
+}
+
+.timeline-node h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.timeline-node p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Transition Animations */
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateX(-20px);
 }
 </style>

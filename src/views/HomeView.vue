@@ -587,6 +587,17 @@ const alurPendaftaran = ref([
   font-size: 1.05rem;
 }
 
+@media (max-width: 768px) {
+  .biaya-content {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .biaya-cta-group {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .biaya-qr-display {
   display: flex;
   flex-direction: column;

@@ -59,7 +59,6 @@
         <div class="footer-col brand-col">
           <div class="footer-logo">
             <img :src="logoUrl" alt="Logo UMMADA" class="logo-img" />
-            <h3>UMMADA Cirebon</h3>
           </div>
           <p class="brand-desc">
             Universitas Muhammadiyah Ahmad Dahlan Cirebon. Kampus unggul, islami, dan berorientasi kesehatan untuk masa depan gemilang.
@@ -194,14 +193,9 @@ onUnmounted(() => {
 }
 
 .logo-img {
-  width: 76px;
-  height: 76px;
+  width: 200px;
+  height: auto;
   object-fit: contain;
-}
-
-.footer-logo .logo-img {
-  width: 100px;
-  height: 100px;
 }
 
 .logo-text {

@@ -28,7 +28,7 @@
             <span class="highlight-lbl">Akreditasi Universitas</span>
           </div>
           <div class="highlight-card glass-card">
-            <span class="highlight-val">14+</span>
+            <span class="highlight-val">8</span>
             <span class="highlight-lbl">Program Studi Unggulan</span>
           </div>
           <div class="highlight-card glass-card">
@@ -134,7 +134,7 @@ const kontak = ref(kontakData)
 /* Hero Styles */
 .hero-section {
   padding: 6rem 0 4rem;
-  background: radial-gradient(circle at 50% 30%, #e0f2f1 0%, var(--bg-dark) 80%);
+  background: radial-gradient(circle at 50% 30%, #cce5e2 0%, var(--bg-dark) 85%);
 }
 
 .hero-container {

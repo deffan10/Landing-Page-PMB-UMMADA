@@ -80,7 +80,7 @@ const akreditasi = ref(contentAkreditasi)
 <style scoped>
 /* Page Header */
 .page-header {
-  background: radial-gradient(circle at 50% 100%, #e0f2f1 0%, var(--bg-dark) 80%);
+  background: radial-gradient(circle at 50% 100%, #cce5e2 0%, var(--bg-dark) 85%);
 }
 
 .page-header h1 {

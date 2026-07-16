@@ -5,10 +5,6 @@
       <div class="container navbar-container">
         <router-link to="/" class="navbar-logo">
           <img :src="logoUrl" alt="Logo UMMADA Cirebon" class="logo-img" />
-          <div class="logo-text">
-            <span class="logo-title">UMMADA</span>
-            <span class="logo-subtitle">PMB Portal</span>
-          </div>
         </router-link>
 
         <!-- Desktop Menu -->
@@ -171,20 +167,17 @@ onUnmounted(() => {
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
-  background-color: rgba(7, 13, 12, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(9, 163, 154, 0.08);
+  height: 85px;
+  background-color: #09a39a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   z-index: 100;
   transition: all 0.3s ease;
 }
 
 .navbar-header.scrolled {
-  height: 70px;
-  background-color: rgba(7, 13, 12, 0.9);
-  border-bottom-color: rgba(9, 163, 154, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  height: 75px;
+  background-color: #09a39a;
+  box-shadow: 0 4px 20px rgba(9, 163, 154, 0.2);
 }
 
 .navbar-container {
@@ -201,9 +194,14 @@ onUnmounted(() => {
 }
 
 .logo-img {
-  width: 42px;
-  height: 42px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
+}
+
+.footer-logo .logo-img {
+  width: 80px;
+  height: 80px;
 }
 
 .logo-text {
@@ -229,7 +227,34 @@ onUnmounted(() => {
 
 .desktop-nav {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.desktop-nav .nav-link {
+  color: #ffffff !important;
+  font-family: var(--font-title);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.desktop-nav .nav-link::after {
+  display: none !important;
+}
+
+.desktop-nav .nav-link:hover {
+  color: #ffffff !important;
+  border-color: #ffffff;
+}
+
+.desktop-nav .nav-link.router-link-active {
+  background-color: #ffffff;
+  color: #09a39a !important;
+  border-color: #ffffff;
 }
 
 @media (max-width: 900px) {
@@ -248,11 +273,12 @@ onUnmounted(() => {
   font-family: var(--font-title);
   font-weight: 600;
   font-size: 0.95rem;
-  color: var(--text-secondary);
+  color: #ffffff;
 }
 
 .btn-login-link:hover {
-  color: var(--primary);
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
 }
 
 .btn-nav-cta {
@@ -282,7 +308,7 @@ onUnmounted(() => {
 .mobile-toggle span {
   width: 100%;
   height: 2px;
-  background-color: var(--text-primary);
+  background-color: #ffffff;
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }

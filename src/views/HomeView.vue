@@ -77,12 +77,14 @@
         </div>
         
         <div class="biaya-qr-display text-center">
-          <div class="qr-wrapper">
-            <img :src="qrCodeUrl" alt="QR Code Biaya PMB UMMADA" class="qr-img" />
-            <div class="qr-overlay">
-              <span class="scan-text">Scan QR / Klik untuk Rincian Biaya</span>
+          <a :href="home.biayaPerkuliahan?.linkBrosur" target="_blank" rel="noopener" class="qr-link">
+            <div class="qr-wrapper">
+              <img :src="qrCodeUrl" alt="QR Code Biaya PMB UMMADA" class="qr-img" />
+              <div class="qr-overlay">
+                <span class="scan-text">Scan QR / Klik untuk Rincian Biaya</span>
+              </div>
             </div>
-          </div>
+          </a>
           <p class="qr-caption">Brosur rincian biaya kuliah tahun akademik 2026/2027</p>
         </div>
       </div>

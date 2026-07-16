@@ -105,8 +105,8 @@ server {
     # 2. Reverse Proxy untuk Halaman / Aksi Fungsional Vendor
     # Path-path ini tidak ditangani oleh Vue Router melainkan dikirim langsung ke vendor
     location ~* ^/(login|register|beranda|biodata|pendaftaran|riwayat-pendaftaran|api|__suteki-pmb) {
-        proxy_pass https://pmb.ummada.ac.id;
-        proxy_set_header Host pmb.ummada.ac.id;
+        proxy_pass https://stfmuhammadiyahcirebon.pmbonline.siakad.tech;
+        proxy_set_header Host stfmuhammadiyahcirebon.pmbonline.siakad.tech;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;

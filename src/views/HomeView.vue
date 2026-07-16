@@ -42,19 +42,65 @@
     <!-- Jalur Masuk Section -->
     <section class="jalur-section section-padding">
       <div class="container">
-        <div class="section-header text-center">
-          <span class="section-badge">Jalur Pendaftaran</span>
-          <h2>Pilihan Jalur Masuk UMMADA</h2>
-          <p class="section-subtitle">Tersedia berbagai pilihan jalur masuk untuk memfasilitasi kebutuhan calon mahasiswa baru.</p>
+        <div class="section-header-flex">
+          <div class="section-header-left">
+            <span class="section-badge">Jalur Pendaftaran</span>
+            <h2>Pilihan Jalur Masuk UMMADA</h2>
+            <p class="section-subtitle">Tersedia berbagai pilihan jalur pendaftaran reguler maupun prestasi untuk calon mahasiswa.</p>
+          </div>
+          <div class="slider-controls">
+            <button class="slider-btn prev-btn" @click="scrollLeft(jalurSlider)" aria-label="Previous Slide">←</button>
+            <button class="slider-btn next-btn" @click="scrollRight(jalurSlider)" aria-label="Next Slide">→</button>
+          </div>
         </div>
 
-        <div class="jalur-grid grid-3">
-          <div v-for="jalur in home.jalurMasuk" :key="jalur.code" class="jalur-card glass-card">
-            <div class="jalur-badge-code">{{ jalur.code }}</div>
-            <h3>{{ jalur.name }}</h3>
-            <p>{{ jalur.description }}</p>
-            <div class="jalur-action-footer">
-              <a :href="home.hero?.ctaRegisterUrl" class="btn btn-secondary btn-block">Pilih Jalur</a>
+        <div class="slider-container">
+          <div class="slider-track" ref="jalurSlider">
+            <div v-for="jalur in home.jalurMasuk" :key="jalur.code" class="jalur-card glass-card">
+              <div class="jalur-badge-code">{{ jalur.code }}</div>
+              <h3>{{ jalur.name }}</h3>
+              <p>{{ jalur.description }}</p>
+              <div class="jalur-action-footer">
+                <a :href="home.hero?.ctaRegisterUrl" class="btn btn-secondary btn-block">Pilih Jalur</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Studi Section -->
+    <section class="prodi-section section-padding">
+      <div class="container">
+        <div class="section-header-flex">
+          <div class="section-header-left">
+            <span class="section-badge">Pilihan Program Studi</span>
+            <h2>Program Studi Unggulan UMMADA</h2>
+            <p class="section-subtitle">Pilih program studi masa depanmu untuk berkarir secara profesional di dunia kesehatan, sains, dan bisnis.</p>
+          </div>
+          <div class="slider-controls">
+            <button class="slider-btn prev-btn" @click="scrollLeft(prodiSlider)" aria-label="Previous Slide">←</button>
+            <button class="slider-btn next-btn" @click="scrollRight(prodiSlider)" aria-label="Next Slide">→</button>
+          </div>
+        </div>
+
+        <div class="slider-container">
+          <div class="slider-track" ref="prodiSlider">
+            <div v-for="(prodi, index) in programStudi" :key="index" class="prodi-card glass-card">
+              <div class="prodi-card-header">
+                <span class="prodi-badge">Terakreditasi</span>
+                <h3>{{ prodi.name }}</h3>
+              </div>
+              <p class="prodi-desc">{{ prodi.description }}</p>
+              <div class="prodi-prospek">
+                <strong>Prospek Kerja:</strong>
+                <ul>
+                  <li v-for="(job, idx) in prodi.prospek" :key="idx">{{ job }}</li>
+                </ul>
+              </div>
+              <div class="prodi-action-footer">
+                <router-link to="/fakultas" class="btn btn-secondary btn-block">Detail Jurusan</router-link>
+              </div>
             </div>
           </div>
         </div>
@@ -123,6 +169,104 @@ import qrCodeUrl from '../assets/qr-biaya.jpg'
 
 const home = ref(homeData)
 const kontak = ref(kontakData)
+
+const jalurSlider = ref(null)
+const prodiSlider = ref(null)
+
+const scrollLeft = (sliderRef) => {
+  if (sliderRef) {
+    sliderRef.scrollBy({ left: -380, behavior: 'smooth' })
+  }
+}
+
+const scrollRight = (sliderRef) => {
+  if (sliderRef) {
+    sliderRef.scrollBy({ left: 380, behavior: 'smooth' })
+  }
+}
+
+const programStudi = ref([
+  {
+    name: "S1 Kebidanan",
+    description: "Mempersiapkan sarjana kebidanan profesional dengan keahlian asuhan kebidanan klinis dan kepemimpinan di sektor kesehatan reproduksi.",
+    prospek: [
+      "Bidan Praktik Mandiri (BPM)",
+      "Konselor Kesehatan Ibu & Anak",
+      "Tenaga Pendidik / Akademisi",
+      "Pengelola Klinik Bersalin"
+    ]
+  },
+  {
+    name: "Pendidikan Profesi Bidan",
+    description: "Pendidikan tahap lanjut profesi bidan untuk mendapatkan sertifikasi Bidan (Bd.) dengan kompetensi klinis unggul berstandar nasional.",
+    prospek: [
+      "Praktisi Bidan RS / Puskesmas",
+      "Pemimpin Unit Layanan Bersalin",
+      "Konsultan Kebidanan Komunitas",
+      "Tenaga Ahli Instansi Kesehatan"
+    ]
+  },
+  {
+    name: "D3 Keperawatan",
+    description: "Membentuk perawat vokasional yang kompeten, beretika, dan memiliki ketrampilan tinggi dalam asuhan keperawatan pasien.",
+    prospek: [
+      "Perawat Klinis RS & Puskesmas",
+      "Perawat Home Care Spesialis",
+      "Asisten Medis Klinik Swasta",
+      "Tenaga Perawat Luar Negeri"
+    ]
+  },
+  {
+    name: "S1 Administrasi Rumah Sakit",
+    description: "Membekali mahasiswa dengan manajemen pelayanan kesehatan, tata kelola administrasi RS, dan sistem informasi klinis modern.",
+    prospek: [
+      "Manajer Operasional Rumah Sakit",
+      "Administrator Klinik & Lab",
+      "Analis Jaminan Kesehatan",
+      "Konsultan Manajemen Kesehatan"
+    ]
+  },
+  {
+    name: "S1 Farmasi",
+    description: "Menyelenggarakan pendidikan kefarmasian ilmiah komprehensif, desain formulasi obat, dan pelayanan kefarmasian komunitas klinis.",
+    prospek: [
+      "Apoteker Rumah Sakit & Klinik",
+      "Quality Control Industri Farmasi",
+      "Formulator Obat & Kosmetik",
+      "Peneliti Laboratorium R&D"
+    ]
+  },
+  {
+    name: "D3 Farmasi",
+    description: "Mencetak Asisten Apoteker yang terampil dalam meracik, menyalurkan, dan mengelola sediaan obat-obatan secara legal dan profesional.",
+    prospek: [
+      "Asisten Apoteker Apotek & RS",
+      "Staf Gudang & Logistik Sediaan",
+      "Medical Representative",
+      "Staf Produksi Industri Farmasi"
+    ]
+  },
+  {
+    name: "S1 Akuntansi",
+    description: "Mendidik profesional akuntansi dengan keahlian audit keuangan, perpajakan modern, akuntansi syariah, dan sistem informasi bisnis.",
+    prospek: [
+      "Auditor Eksternal / Internal",
+      "Staf Keuangan & Pajak Bisnis",
+      "Konsultan Pajak Profesional",
+      "Akuntan Sektor Publik & Swasta"
+    ]
+  },
+  {
+    name: "S1 Manajemen",
+    description: "Mempersiapkan calon manajer dan wirausahawan masa depan dengan keahlian bisnis digital, manajemen SDM, pemasaran, dan keuangan global.",
+    prospek: [
+      "Manajer Operasional & Bisnis",
+      "Wirausahawan (Entrepreneur)",
+      "Digital Marketing Specialist",
+      "Konsultan Bisnis & Manajemen"
+    ]
+  }
+])
 </script>
 
 <style scoped>
@@ -389,5 +533,171 @@ const kontak = ref(kontakData)
   flex-shrink: 0;
   padding: 0.65rem 1.25rem;
   font-size: 0.85rem;
+}
+
+/* Slider Header Controls & Track Styling */
+.section-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .section-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+.section-header-left {
+  max-width: 700px;
+}
+
+.slider-controls {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.slider-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--glass-bg);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(8px);
+}
+
+.slider-btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 4px 10px rgba(9, 163, 154, 0.2);
+}
+
+/* Slider Track styling */
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+
+.slider-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0.25rem 2rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Slide Cards */
+.jalur-card {
+  flex: 0 0 360px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+@media (max-width: 480px) {
+  .jalur-card {
+    flex: 0 0 290px;
+  }
+}
+
+.prodi-card {
+  flex: 0 0 360px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 440px;
+}
+
+@media (max-width: 480px) {
+  .prodi-card {
+    flex: 0 0 290px;
+    min-height: 480px;
+  }
+}
+
+.prodi-card-header {
+  margin-bottom: 1rem;
+}
+
+.prodi-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: var(--primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.prodi-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.prodi-prospek {
+  margin-bottom: 1.5rem;
+}
+
+.prodi-prospek strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.prodi-prospek ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.prodi-prospek li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.prodi-prospek li::before {
+  content: '⚡';
+  position: absolute;
+  left: 0;
+  font-size: 0.8rem;
+  color: var(--primary);
+}
+
+.prodi-action-footer {
+  margin-top: auto;
 }
 </style>

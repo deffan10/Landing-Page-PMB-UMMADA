@@ -10,27 +10,81 @@
   "documents": [
     {
       "name": "Surat Keputusan (SK) Penggabungan UMMADA Cirebon",
-      "description": "Keputusan Menteri Pendidikan Tinggi, Sains, dan Teknologi RI Nomor 517/B/O/2025 tentang Perubahan atas Izin Penggabungan Sekolah Tinggi menjadi Universitas Muhammadiyah Ahmad Dahlan Cirebon.",
+      "description": "SK resmi penggabungan STIKes Muhammadiyah, STF Muhammadiyah, dan STIKes Ahmad Dahlan Cirebon.",
       "fileUrl": "/document/SK-UMMADA.pdf",
-      "size": "PDF Dokumen"
+      "size": "SK Institusi"
     },
     {
-      "name": "Sertifikat Akreditasi Perguruan Tinggi (APT) UMMADA Cirebon (2025 - 2030)",
-      "description": "Sertifikat Resmi BAN-PT yang menetapkan Peringkat Akreditasi Perguruan Tinggi Universitas Muhammadiyah Ahmad Dahlan Cirebon dengan peringkat Baik Sekali.",
+      "name": "Sertifikat Akreditasi Perguruan Tinggi (2025 - 2030)",
+      "description": "Sertifikat resmi peringkat akreditasi 'Baik Sekali' oleh BAN-PT.",
       "fileUrl": "/document/APT_Sertifikat_UMMADA.pdf",
-      "size": "PDF Dokumen"
+      "size": "Sertifikat Perguruan Tinggi"
     },
     {
-      "name": "SK Akreditasi Perguruan Tinggi Sebelumnya (2024 - 2025)",
-      "description": "Keterangan Akreditasi Perguruan Tinggi sebelum penggabungan resmi seluruh entitas sekolah tinggi.",
+      "name": "SK Akreditasi Perguruan Tinggi Sebelumnya",
+      "description": "Surat keterangan akreditasi institusi sebelum penggabungan.",
       "fileUrl": "/document/APT_Sebelumnya.pdf",
-      "size": "PDF Dokumen"
+      "size": "SK Perguruan Tinggi"
     },
     {
-      "name": "SK Akreditasi Program Studi D3 UMMADA Cirebon (2023 - 2028)",
-      "description": "Surat Keputusan LAM-PTKes mengenai akreditasi program studi Diploma Tiga (D3) setelah penggabungan.",
-      "fileUrl": "/document/D3_UMMADA_Akreditasi.pdf",
-      "size": "PDF Dokumen"
+      "name": "Sertifikat Akreditasi Sarjana (S1) Kebidanan (2026 - 2030)",
+      "description": "Dokumen penjaminan mutu program studi S1 Kebidanan UMMADA.",
+      "fileUrl": "/document/S1_Kebidanan_Sertifikat_26_30.pdf",
+      "size": "Sertifikat S1"
+    },
+    {
+      "name": "Sertifikat Akreditasi Pendidikan Profesi Bidan (2026 - 2030)",
+      "description": "Dokumen penjaminan mutu program profesi kebidanan UMMADA.",
+      "fileUrl": "/document/Profesi_Bidan_Sertifikat_26_30.pdf",
+      "size": "Sertifikat Profesi"
+    },
+    {
+      "name": "Sertifikat Akreditasi Sarjana (S1) Farmasi (2026 - 2031)",
+      "description": "Sertifikat akreditasi program studi S1 Farmasi UMMADA Cirebon.",
+      "fileUrl": "/document/S1_Farmasi_Sertifikat_2026.pdf",
+      "size": "Sertifikat S1"
+    },
+    {
+      "name": "SK Akreditasi Sarjana (S1) Farmasi (2026)",
+      "description": "Surat keputusan akreditasi program studi S1 Farmasi UMMADA.",
+      "fileUrl": "/document/S1_Farmasi_SK_2026.pdf",
+      "size": "SK S1"
+    },
+    {
+      "name": "SK Akreditasi Diploma Tiga (D3) Farmasi (2023 - 2028)",
+      "description": "SK akreditasi D3 Farmasi untuk penjaminan mutu laboratorium.",
+      "fileUrl": "/document/D3_Farmasi_SK_2023.pdf",
+      "size": "SK D3"
+    },
+    {
+      "name": "Sertifikat Akreditasi D3 Farmasi (2023 - 2028)",
+      "description": "Sertifikat resmi kelulusan akreditasi prodi D3 Farmasi.",
+      "fileUrl": "/document/D3_Farmasi_Sertifikat_2023.pdf",
+      "size": "Sertifikat D3"
+    },
+    {
+      "name": "SK Akreditasi D3 Keperawatan (2025 - 2030)",
+      "description": "Surat keputusan akreditasi program studi Diploma Tiga Keperawatan.",
+      "fileUrl": "/document/D3_Keperawatan_SK_2025.pdf",
+      "size": "SK D3"
+    },
+    {
+      "name": "SK Akreditasi S1 Administrasi Rumah Sakit (2024)",
+      "description": "Surat keputusan akreditasi prodi S1 Administrasi Rumah Sakit.",
+      "fileUrl": "/document/S1_ARS_SK_2024.pdf",
+      "size": "SK S1"
+    },
+    {
+      "name": "SK Akreditasi S1 Akuntansi (2024)",
+      "description": "Surat keputusan akreditasi prodi S1 Akuntansi FESHUM.",
+      "fileUrl": "/document/S1_Akuntansi_SK_2024.pdf",
+      "size": "SK S1"
+    },
+    {
+      "name": "SK Akreditasi S1 Manajemen (2024)",
+      "description": "Surat keputusan akreditasi prodi S1 Manajemen FESHUM.",
+      "fileUrl": "/document/S1_Manajemen_SK_2024.pdf",
+      "size": "SK S1"
     }
   ]
 }

@@ -194,14 +194,14 @@ onUnmounted(() => {
 }
 
 .logo-img {
-  width: 60px;
-  height: 60px;
+  width: 76px;
+  height: 76px;
   object-fit: contain;
 }
 
 .footer-logo .logo-img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 }
 
 .logo-text {
@@ -271,19 +271,40 @@ onUnmounted(() => {
 
 .btn-login-link {
   font-family: var(--font-title);
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #09a39a !important;
+  background-color: #ffffff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.06);
+  transition: all var(--transition-fast);
 }
 
 .btn-login-link:hover {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: underline;
+  background-color: transparent;
+  color: #ffffff !important;
+  text-decoration: none;
+  box-shadow: none;
 }
 
 .btn-nav-cta {
-  padding: 0.5rem 1.25rem;
-  font-size: 0.875rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #ff5722 0%, #ff9800 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(255, 87, 34, 0.35);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.btn-nav-cta:hover {
+  background: linear-gradient(135deg, #ff7043 0%, #ffb74d 100%);
+  box-shadow: 0 6px 14px rgba(255, 87, 34, 0.5);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 600px) {

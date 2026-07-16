@@ -48,7 +48,8 @@
           <p class="section-subtitle">Tersedia berbagai pilihan jalur pendaftaran reguler maupun prestasi untuk calon mahasiswa.</p>
         </div>
 
-        <div class="tabs-container grid-2">
+        <!-- Desktop Tabs Layout (Visible > 900px) -->
+        <div class="desktop-only-tabs tabs-container grid-2" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
           <!-- Left Column: Tabs List -->
           <div class="tabs-list-wrapper">
             <button 
@@ -82,6 +83,20 @@
             </transition>
           </div>
         </div>
+
+        <!-- Mobile Card Slider Layout (Visible <= 900px) -->
+        <div class="mobile-only-slider slider-container">
+          <div class="slider-track">
+            <div v-for="jalur in home.jalurMasuk" :key="jalur.code" class="jalur-card glass-card">
+              <div class="jalur-badge-code">{{ jalur.code }}</div>
+              <h3>{{ jalur.name }}</h3>
+              <p>{{ jalur.description }}</p>
+              <div class="jalur-action-footer">
+                <a :href="home.hero?.ctaRegisterUrl" class="btn btn-secondary btn-block">Pilih Jalur</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -94,7 +109,8 @@
           <p class="section-subtitle">Pilih program studi masa depanmu untuk berkarir secara profesional di dunia kesehatan, sains, dan bisnis.</p>
         </div>
 
-        <div class="tabs-container grid-2">
+        <!-- Desktop Tabs Layout (Visible > 900px) -->
+        <div class="desktop-only-tabs tabs-container grid-2" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
           <!-- Left Column: Tabs List -->
           <div class="tabs-list-wrapper">
             <button 
@@ -137,6 +153,28 @@
                 </div>
               </div>
             </transition>
+          </div>
+        </div>
+
+        <!-- Mobile Card Slider Layout (Visible <= 900px) -->
+        <div class="mobile-only-slider slider-container">
+          <div class="slider-track">
+            <div v-for="(prodi, index) in programStudi" :key="index" class="prodi-card glass-card">
+              <div class="prodi-card-header">
+                <span class="prodi-badge">Terakreditasi</span>
+                <h3>{{ prodi.name }}</h3>
+              </div>
+              <p class="prodi-desc">{{ prodi.description }}</p>
+              <div class="prodi-prospek">
+                <strong>Prospek Kerja:</strong>
+                <ul>
+                  <li v-for="(job, idx) in prodi.prospek" :key="idx">{{ job }}</li>
+                </ul>
+              </div>
+              <div class="prodi-action-footer">
+                <router-link to="/fakultas" class="btn btn-secondary btn-block">Detail Jurusan</router-link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -237,17 +275,18 @@ let jalurInterval = null
 let prodiInterval = null
 
 const startAutoplay = () => {
+  stopAutoplay() // Prevent overlaps
   jalurInterval = setInterval(() => {
     if (home.value.jalurMasuk && home.value.jalurMasuk.length > 0) {
       activeJalurIndex.value = (activeJalurIndex.value + 1) % home.value.jalurMasuk.length
     }
-  }, 2000)
+  }, 5000)
 
   prodiInterval = setInterval(() => {
     if (programStudi.value.length > 0) {
       activeProdiIndex.value = (activeProdiIndex.value + 1) % programStudi.value.length
     }
-  }, 2000)
+  }, 5000)
 }
 
 const stopAutoplay = () => {
@@ -262,7 +301,7 @@ const selectJalur = (index) => {
     if (home.value.jalurMasuk && home.value.jalurMasuk.length > 0) {
       activeJalurIndex.value = (activeJalurIndex.value + 1) % home.value.jalurMasuk.length
     }
-  }, 4000)
+  }, 7000) // Delay restart after click
 }
 
 const selectProdi = (index) => {
@@ -272,7 +311,7 @@ const selectProdi = (index) => {
     if (programStudi.value.length > 0) {
       activeProdiIndex.value = (activeProdiIndex.value + 1) % programStudi.value.length
     }
-  }, 4000)
+  }, 7000) // Delay restart after click
 }
 
 onMounted(() => {
@@ -650,7 +689,7 @@ const alurPendaftaran = ref([
   font-size: 0.85rem;
 }
 
-/* Vertical Tabs Layout */
+/* Vertical Tabs Layout (Desktop Only) */
 .tabs-container {
   align-items: stretch;
   gap: 2.5rem;
@@ -781,27 +820,72 @@ const alurPendaftaran = ref([
   margin-top: auto;
 }
 
-/* Page Responsive layout for vertical tabs on small screens */
-@media (max-width: 900px) {
-  .tabs-container.grid-2 {
-    grid-template-columns: 1fr;
-  }
-  .tabs-list-wrapper {
-    flex-direction: row;
-    max-height: none;
-    overflow-x: auto;
-    padding-bottom: 0.75rem;
-  }
-  .tab-item-btn {
-    white-space: nowrap;
-    padding: 0.75rem 1.25rem;
-  }
-  .tab-item-btn:hover {
-    transform: none;
+/* Mobile vs Desktop Display Toggle Rules */
+@media (min-width: 901px) {
+  .mobile-only-slider {
+    display: none !important;
   }
 }
 
-/* Prodi Active Details */
+@media (max-width: 900px) {
+  .desktop-only-tabs {
+    display: none !important;
+  }
+  
+  .mobile-only-slider {
+    display: block !important;
+  }
+}
+
+/* Mobile Slider styling */
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+
+.slider-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0.25rem 2rem;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-only-slider .jalur-card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-only-slider .prodi-card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 440px;
+}
+
+@media (max-width: 480px) {
+  .mobile-only-slider .jalur-card,
+  .mobile-only-slider .prodi-card {
+    flex: 0 0 270px;
+  }
+}
+
+/* Prodi Active Details (Desktop) */
 .prodi-detail-card {
   justify-content: flex-start;
 }
@@ -867,7 +951,7 @@ const alurPendaftaran = ref([
   color: var(--primary);
 }
 
-/* Timeline / Alur Pendaftaran */
+/* Timeline / Alur Pendaftaran (Desktop vs Mobile swipe) */
 .timeline-wrapper {
   margin-top: 3.5rem;
 }
@@ -876,18 +960,6 @@ const alurPendaftaran = ref([
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-}
-
-@media (max-width: 992px) {
-  .timeline-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 576px) {
-  .timeline-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .timeline-node {
@@ -927,6 +999,38 @@ const alurPendaftaran = ref([
   font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.5;
+}
+
+/* Responsive Mobile Carousel for Timeline/Alur */
+@media (max-width: 992px) {
+  .timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .timeline-grid {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 1rem 0.25rem 2rem;
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .timeline-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .timeline-node {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+  }
 }
 
 /* Transition Animations */

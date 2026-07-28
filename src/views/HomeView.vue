@@ -135,8 +135,7 @@
               >
                 <div class="card-glow-spot"></div>
                 <div class="prodi-card-header">
-                  <span class="prodi-badge">Terakreditasi</span>
-                  <h3>{{ programStudi[activeProdiIndex].name }}</h3>
+                                    <h3>{{ programStudi[activeProdiIndex].name }}</h3>
                 </div>
                 <p class="tab-desc">{{ programStudi[activeProdiIndex].description }}</p>
                 
@@ -161,7 +160,6 @@
           <div class="slider-track">
             <div v-for="(prodi, index) in programStudi" :key="index" class="prodi-card glass-card">
               <div class="prodi-card-header">
-                <span class="prodi-badge">Terakreditasi</span>
                 <h3>{{ prodi.name }}</h3>
               </div>
               <p class="prodi-desc">{{ prodi.description }}</p>

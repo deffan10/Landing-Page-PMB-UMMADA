@@ -112,13 +112,27 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import Lenis from 'lenis'
 import kontakData from './content/kontak.json'
 import logoUrl from './assets/logo-ummada.png'
 
 const kontak = ref(kontakData)
 const isScrolled = ref(false)
 const mobileMenuOpen = ref(false)
+
+let lenisInstance = null
+let rafId = null
+
+const route = useRoute()
+
+// Watch route changes to reset scroll position via Lenis
+watch(() => route.path, () => {
+  if (lenisInstance) {
+    lenisInstance.scrollTo(0, { immediate: true })
+  }
+})
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20
@@ -134,6 +148,23 @@ const closeMobileMenu = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+
+  // Initialize Lenis Smooth Scroll
+  lenisInstance = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+  })
+
+  function raf(time) {
+    if (lenisInstance) {
+      lenisInstance.raf(time)
+    }
+    rafId = requestAnimationFrame(raf)
+  }
+
+  rafId = requestAnimationFrame(raf)
+
   // Hide loading spinner if it exists
   const spinner = document.getElementById('app-loading-state')
   if (spinner) {
@@ -143,6 +174,14 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  if (lenisInstance) {
+    lenisInstance.destroy()
+    lenisInstance = null
+  }
+  if (rafId) {
+    cancelAnimationFrame(rafId)
+    rafId = null
+  }
 })
 </script>
 

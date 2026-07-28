@@ -53,6 +53,14 @@
 
             <!-- Faculty Action Footer -->
             <div class="faculty-footer text-right">
+            <a v-if="fak.websiteUrl" 
+               :href="fak.websiteUrl" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn btn-outline"
+            >
+            🌐 Website {{ fak.abbreviation }}
+            </a>
               <a href="/register" class="btn btn-primary">Daftar di {{ fak.abbreviation }}</a>
             </div>
           </div>
@@ -204,6 +212,49 @@ const fakultasData = ref(contentFakultas)
 @media (max-width: 768px) {
   .prodi-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Styling Footer Tombol Fakultas */
+.faculty-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1.5rem;
+}
+
+/* Tombol Outline untuk Website */
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.2));
+  color: var(--text-primary, #ffffff);
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast, 0.2s);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Responsif Mobile */
+@media (max-width: 480px) {
+  .faculty-footer {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .faculty-footer .btn,
+  .faculty-footer .btn-outline {
+    width: 100%;
+    text-align: center;
   }
 }
 

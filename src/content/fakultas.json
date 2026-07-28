@@ -5,6 +5,7 @@
     {
       "name": "Fakultas Ilmu Kesehatan (FIKES)",
       "abbreviation": "FIKES",
+      "websiteUrl": "https://fikes.ummada.ac.id",
       "description": "Fakultas Ilmu Kesehatan berkomitmen mencetak tenaga kesehatan profesional yang unggul, kompeten, dan berintegritas tinggi berdasarkan nilai-nilai keislaman.",
       "locations": [
         "Kampus 1: Jl. Kalitanjung No.14-18A, Harjamukti, Kota Cirebon",
@@ -36,6 +37,7 @@
     {
       "name": "Fakultas Farmasi",
       "abbreviation": "Farmasi",
+      "websiteUrl": "https://farmasi.ummada.ac.id",
       "description": "Fakultas Farmasi UMMADA menyelenggarakan pendidikan kefarmasian teoritis dan klinis yang berkualitas guna mendukung ketahanan kesehatan masyarakat.",
       "locations": [
         "Kampus 3: Jl. Cideng Indah No. 3, Kertawinangun, Kec. Kedawung, Kabupaten Cirebon"
@@ -56,6 +58,7 @@
     {
       "name": "Fakultas Ekonomi, Sosial, dan Humaniora (FESHUM)",
       "abbreviation": "FESHUM",
+      "websiteUrl": "https://feshum.ummada.ac.id",
       "description": "Fakultas Ekonomi, Sosial, dan Humaniora membekali mahasiswa dengan keahlian bisnis modern, pengelolaan keuangan, dan pemikiran kritis sosial.",
       "locations": [
         "Kampus Utama: Jl. Cideng Indah No. 3, Kertawinangun, Kec. Kedawung, Kabupaten Cirebon"

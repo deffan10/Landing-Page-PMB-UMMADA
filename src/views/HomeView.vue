@@ -49,7 +49,7 @@
         </div>
 
         <!-- Desktop Tabs Layout (Visible > 900px) -->
-        <div class="desktop-only-tabs tabs-container grid-2" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
+        <div class="desktop-only-tabs tabs-container" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
           <!-- Left Column: Tabs List -->
           <div class="tabs-list-wrapper">
             <button 
@@ -142,7 +142,7 @@
         </div>
 
         <!-- Desktop Tabs Layout (Visible > 900px) -->
-        <div class="desktop-only-tabs tabs-container grid-2" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
+        <div class="desktop-only-tabs tabs-container" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
           <!-- Left Column: Tabs List -->
           <div class="tabs-list-wrapper">
             <button 
@@ -730,46 +730,32 @@ const alurPendaftaran = ref([
   font-size: 0.85rem;
 }
 
-/* Vertical Tabs Layout (Desktop Only) */
+/* Horizontal Tabs Layout (Desktop Only) */
 .tabs-container {
-  align-items: stretch;
-  gap: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .tabs-list-wrapper {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  max-height: 480px;
-  overflow-y: auto;
-  padding-right: 0.5rem;
-}
-
-/* Scrollbar styles for tabs list */
-.tabs-list-wrapper::-webkit-scrollbar {
-  width: 6px;
-}
-.tabs-list-wrapper::-webkit-scrollbar-track {
-  background: transparent;
-}
-.tabs-list-wrapper::-webkit-scrollbar-thumb {
-  background: rgba(9, 163, 154, 0.2);
-  border-radius: 4px;
-}
-.tabs-list-wrapper::-webkit-scrollbar-thumb:hover {
-  background: rgba(9, 163, 154, 0.4);
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .tab-item-btn {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1.1rem 1.5rem;
+  padding: 1rem 1.5rem;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 12px;
   color: var(--text-primary);
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   transition: all var(--transition-normal);
   font-family: var(--font-title);
@@ -782,7 +768,7 @@ const alurPendaftaran = ref([
 .tab-item-btn:hover {
   background: var(--bg-surface-hover);
   border-color: rgba(9, 163, 154, 0.3);
-  transform: translateX(4px);
+  transform: translateY(-4px);
 }
 
 .tab-item-btn.active {

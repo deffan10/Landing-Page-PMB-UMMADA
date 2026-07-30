@@ -76,6 +76,22 @@
                 <span class="badge-accent">Jalur {{ home.jalurMasuk[activeJalurIndex].code }}</span>
                 <h3>{{ home.jalurMasuk[activeJalurIndex].name }}</h3>
                 <p class="tab-desc">{{ home.jalurMasuk[activeJalurIndex].description }}</p>
+                
+                <div v-if="home.jalurMasuk[activeJalurIndex].biayaUrl" class="biaya-info-link">
+                  Untuk informasi biaya kunjungi: <a :href="home.jalurMasuk[activeJalurIndex].biayaUrl" target="_blank" rel="noopener">{{ home.jalurMasuk[activeJalurIndex].biayaUrl }}</a>
+                </div>
+
+                <div v-if="home.jalurMasuk[activeJalurIndex].requirements" class="jalur-requirements">
+                  <div v-for="(reqGroup, gIdx) in home.jalurMasuk[activeJalurIndex].requirements" :key="gIdx" class="req-group">
+                    <strong class="req-group-title">{{ reqGroup.title }}</strong>
+                    <ul class="req-list">
+                      <li v-for="(reqItem, rIdx) in reqGroup.items" :key="rIdx">
+                        {{ reqItem }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
                 <div class="tab-action-footer">
                   <a :href="home.hero?.ctaRegisterUrl" class="btn btn-primary">Pilih Jalur Ini</a>
                 </div>
@@ -91,6 +107,22 @@
               <div class="jalur-badge-code">{{ jalur.code }}</div>
               <h3>{{ jalur.name }}</h3>
               <p>{{ jalur.description }}</p>
+              
+              <div v-if="jalur.biayaUrl" class="biaya-info-link" style="margin-bottom: 1rem;">
+                Untuk informasi biaya kunjungi: <a :href="jalur.biayaUrl" target="_blank" rel="noopener">{{ jalur.biayaUrl }}</a>
+              </div>
+
+              <div v-if="jalur.requirements" class="jalur-requirements">
+                <div v-for="(reqGroup, gIdx) in jalur.requirements" :key="gIdx" class="req-group">
+                  <strong class="req-group-title">{{ reqGroup.title }}</strong>
+                  <ul class="req-list">
+                    <li v-for="(reqItem, rIdx) in reqGroup.items" :key="rIdx">
+                      {{ reqItem }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
               <div class="jalur-action-footer">
                 <a :href="home.hero?.ctaRegisterUrl" class="btn btn-secondary btn-block">Pilih Jalur</a>
               </div>
@@ -1056,5 +1088,75 @@ const alurPendaftaran = ref([
 .fade-slide-leave-to {
   opacity: 0;
   transform: translateX(-20px);
+}
+
+/* Requirements & Biaya Info Styling */
+.biaya-info-link {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.biaya-info-link a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.biaya-info-link a:hover {
+  color: #00d2c4;
+}
+
+.jalur-requirements {
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 1.25rem;
+  text-align: left;
+}
+
+.req-group {
+  margin-bottom: 1.25rem;
+}
+
+.req-group:last-child {
+  margin-bottom: 0;
+}
+
+.req-group-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.req-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.req-list li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.35rem;
+  line-height: 1.45;
+}
+
+.req-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.jalur-action-footer {
+  margin-top: auto;
+  padding-top: 1rem;
 }
 </style>

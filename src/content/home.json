@@ -14,26 +14,101 @@
     {
       "code": "01",
       "name": "Reguler",
-      "description": "Jalur pendaftaran reguler untuk lulusan SMA/SMK/MA sederajat melalui seleksi nilai rapor atau tes.",
-      "url": "https://pmb.ummada.ac.id/jalur-masuk/68e32b2c27d92c6a8711ad0e"
+      "description": "Pendaftar dari SMA/SMK/MA/MAN dan sederajat melalui jalur tes, Bisa memilih maximal 2 program study yang tersedia.",
+      "biayaUrl": "https://bit.ly/BIAYAPMB2627",
+      "url": "https://pmb.ummada.ac.id/jalur-masuk/68e32b2c27d92c6a8711ad0e",
+      "requirements": [
+        {
+          "title": "Syarat Pendaftaran",
+          "items": [
+            "Lulusan SMA/SMK/MA sederajat",
+            "Fotokopi ijazah dan transkrip nilai",
+            "Fotokopi kartu identitas (KTP/KK)",
+            "Pas foto 3×4 (6 lembar) dan 4×6 (4 lembar)",
+            "Surat keterangan sehat dari dokter"
+          ]
+        }
+      ]
     },
     {
       "code": "02",
       "name": "Penelusuran Minat Bakat & Prestasi (PMDP)",
-      "description": "Seleksi khusus bagi siswa berprestasi di bidang akademik, olahraga, seni, keagamaan, atau minat bakat lainnya. Nilai rapor yang bagus dapat juga mendaftar jalur ini",
-      "url": "https://pmb.ummada.ac.id/jalur-masuk/68e32b2027d92c6a8711ad0d"
+      "description": "Penelurusan Minat Bakat dan Prestasi, calon mahasiswa bisa menyertakan sertifikat prestasi yang pernah di raih atau melampirkan nilai raport.",
+      "biayaUrl": "https://bit.ly/BIAYAPMB2627",
+      "url": "https://pmb.ummada.ac.id/jalur-masuk/68e32b2027d92c6a8711ad0d",
+      "requirements": [
+        {
+          "title": "Syarat Pendaftaran",
+          "items": [
+            "Lulusan SMA/SMK/MA sederajat",
+            "Fotokopi ijazah dan transkrip nilai",
+            "Nilai Raport semester 1 - 5",
+            "Sertifikat Prestasi Akademik / Non-Akademik",
+            "Fotokopi kartu identitas (KTP/KK)",
+            "Pas foto 3×4 (6 lembar) dan 4×6 (4 lembar)",
+            "Surat keterangan sehat dari dokter"
+          ]
+        }
+      ]
     },
     {
       "code": "03",
       "name": "RPL & Pendidikan Profesi Bidan",
-      "description": "Jalur Rekognisi Pembelajaran Lampau (RPL) untuk lulusan D3 Kebidanan melanjutkan ke S1 + Profesi Bidan.",
-      "url": "https://pmb.ummada.ac.id/jalur-masuk/690022f8d095fb00859da5c1"
+      "description": "RPL adalah program pengakuan atas capaian pembelajaran yang diperoleh dari pendidikan formal, informal, hingga pengalaman kerja sebagai dasar melanjutkan/menyetarakan pendidikan dengan kualifikasi tertentu. Program RPL menargetkan calon pendaftar dengan latar belakang pernah mengenyam pendidikan formal, informal, dan angkatan yang telah bekerja lebih dari dua tahun. Pendidikan Profesi Bidan adalah pendidikan lanjutan yang ditempuh setelah lulus Sarjana Kebidanan dengan tujuan membentuk bidan yang profesional dan kompeten dalam memberikan pelayanan kebidanan. Pendidikan ini menekankan pada praktik klinik secara langsung di berbagai lahan praktik seperti rumah sakit, puskesmas, klinik, dan komunitas, sehingga mahasiswa mampu menerapkan ilmu dan keterampilan kebidanan dalam situasi nyata. Selama pendidikan, mahasiswa dibekali kemampuan memberikan asuhan kebidanan pada kehamilan, persalinan, nifas, bayi baru lahir, keluarga berencana, serta kesehatan reproduksi. Pendidikan Profesi Bidan umumnya berlangsung selama satu hingga dua tahun dan diakhiri dengan uji kompetensi sebagai syarat memperoleh sertifikat profesi dan Surat Tanda Registrasi (STR) untuk dapat menjalankan praktik sebagai bidan profesional.",
+      "biayaUrl": "https://bit.ly/BIAYAPMB2627",
+      "url": "https://pmb.ummada.ac.id/jalur-masuk/690022f8d095fb00859da5c1",
+      "requirements": [
+        {
+          "title": "Persyaratan Daftar Kuliah Kelas RPL dan Profesi Bidan",
+          "items": [
+            "Kartu Tanda Penduduk KTP",
+            "Kartu Keluarga",
+            "Ijazah / SKL",
+            "Transkrip Nilai",
+            "Surat Sehat dan Tidak buta Warna",
+            "Pas Foto",
+            "Bukti Bekerja",
+            "STR",
+            "Daftar Riwayat Hidup",
+            "Surat Izin Pimpinan",
+            "Surat Izin BKPSDM (bagi ASN/PNS)"
+          ]
+        }
+      ]
     },
     {
       "code": "04",
       "name": "RPL Farmasi",
-      "description": "Jalur transfer atau penyetaraan kompetensi pembelajaran lampau untuk program studi D3/S1 Farmasi.",
-      "url": "https://pmb.ummada.ac.id/jalur-masuk/6a0e864def9de99f800c6916"
+      "description": "Program Rekognisi Pembelajaran Lampau (RPL) merupakan program pengakuan atas capaian pembelajaran yang diperoleh melalui pendidikan formal, pengalaman kerja, maupun pelatihan yang relevan untuk melanjutkan pendidikan pada jenjang yang lebih tinggi. Program ini ditujukan bagi calon mahasiswa yang telah memiliki pengalaman pendidikan dan/atau pengalaman kerja di bidang kefarmasian. Program RPL Farmasi memberikan kesempatan bagi lulusan SMK Farmasi, SAA, SMF, D3 Farmasi, maupun D3 Analisis Farmasi dan Makanan untuk melanjutkan pendidikan ke jenjang D3 atau S1 Farmasi melalui proses asesmen dan konversi SKS berdasarkan riwayat pendidikan sebelumnya. Melalui program ini, mahasiswa dapat menjalani proses studi yang lebih efisien sesuai hasil asesmen akademik dan capaian pembelajaran yang dimiliki.",
+      "biayaUrl": "https://bit.ly/BIAYAPMB2627",
+      "url": "https://pmb.ummada.ac.id/jalur-masuk/6a0e864def9de99f800c6916",
+      "requirements": [
+        {
+          "title": "Persyaratan Pendaftaran RPL D3 Farmasi",
+          "items": [
+            "Lulusan SAA / SMF / SMK Farmasi",
+            "Memiliki pengalaman kerja minimal 2 tahun",
+            "Bersedia menyusun portofolio",
+            "Surat keterangan sehat dan tidak buta warna",
+            "Pas foto berwarna 3×4",
+            "Fotokopi KTP dan KK",
+            "Fotokopi legalisir ijazah dan transkrip nilai",
+            "Surat keterangan kerja"
+          ]
+        },
+        {
+          "title": "Persyaratan Pendaftaran RPL S1 Farmasi",
+          "items": [
+            "Lulusan D3 Farmasi / D3 Analisis Farmasi dan Makanan",
+            "Alumni maupun non alumni",
+            "Fresh graduate maupun sudah bekerja",
+            "Surat keterangan sehat dan tidak buta warna",
+            "Pas foto berwarna 3×4",
+            "Fotokopi KTP dan KK",
+            "Fotokopi legalisir ijazah dan transkrip nilai"
+          ]
+        }
+      ]
     }
   ],
   "biayaPerkuliahan": {
